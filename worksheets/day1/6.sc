@@ -25,11 +25,30 @@ def map(xs: List[Int], f: Int => Int): List[Int] = {
   result.reverse
 }
 
+//@annotation.tailrec
 def map(xs: List[Int], f: Int => Int): List[Int] = {
-  ???
+  if(xs.isEmpty) {
+    xs
+  } else {
+    f(xs.head) :: map(xs.tail, f)
+  }
 }
 
-val xs = List(1, 2, 3, 4)
+def map(xs: List[Int], f: Int => Int): List[Int] = {
+  @annotation.tailrec
+  def loop(rem: List[Int], stack: List[Int]): List[Int] = {
+    if(rem.isEmpty) {
+      stack
+    } else {
+      val newStack = f(rem.head) :: stack
+      loop(rem.tail, newStack)
+    }
+  }
+  loop(xs, Nil).reverse
+}
+
+//val xs = List(1, 2, 3, 4)
+val xs = (1 to 10000).toList
 
 map(xs, x => x * x)
 map(xs, x => x * 10)
