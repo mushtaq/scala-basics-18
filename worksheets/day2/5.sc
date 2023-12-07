@@ -1,6 +1,5 @@
 
-trait Color
-
+sealed trait Color
 object Color {
   case object Red extends Color
   case object Green extends Color
@@ -9,7 +8,6 @@ object Color {
 
 
 def m(color: Color) = ()
-
 m(Color.Red)
 m(Color.Green)
 
