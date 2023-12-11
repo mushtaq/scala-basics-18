@@ -18,6 +18,11 @@ def length[T](xs: List[T]): Int = {
 
 def length[T](xs: List[T]): Int = xs match {
   case Nil           => 0
+  case Cons(_, tail) => 1 + length(tail)
+}
+
+def length[T](xs: List[T]): Int = xs match {
+  case Nil           => 0
   case Cons(0, tail) => 1 + length(tail)
   case Cons(1, tail) => 1 + length(tail)
 }
