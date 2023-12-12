@@ -36,7 +36,8 @@ object Data {
   val json: JsValue = Json.obj(
     "a" -> 10,
     "b" -> true,
-    "d" -> "urn:world",
+    "d" -> "wrong:world",
+    "zz" -> "urn:world",
     "d1" -> "world",
     "c" -> JsNull,
     "e" -> Json.obj(
