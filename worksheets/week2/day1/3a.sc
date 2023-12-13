@@ -14,14 +14,16 @@ def transform(json: JsValue): JsValue = json match {
   case JsTrue                  => JsFalse
   case JsString("urn" :: post) => JsString(post)
 //  case JsString(s"urn:$post")  => JsString(post)
-  case JsString(value)         => json
-  case JsNumber(value)         => JsNumber(value * value)
-  case JsArray(values)         => JsArray(values.map(transform))
-  case JsObject(values)        => JsObject(
-    values.map {
-      case (k, v) => if(k == "m" || k == "n") (k, v) else (k, transform(v))
-    }
-  )
+  case JsString(value) => json
+  case JsNumber(value) => JsNumber(value * value)
+  case JsArray(values) => JsArray(values.map(transform))
+  case JsObject(values) =>
+    JsObject(
+      values.map {
+        case (k@("m" | "n"), v) => (k, v)
+        case (k, v) => (k, transform(v))
+      }
+    )
 }
 
 Json.prettyPrint(transform(Data.json))

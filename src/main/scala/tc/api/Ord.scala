@@ -1,3 +1,3 @@
-package tc.lib
+package tc.api
 
 object Ord {}

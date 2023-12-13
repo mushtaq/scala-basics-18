@@ -1,4 +1,4 @@
-package tc.app
+package tc.domain
 
 case class Book(
     author: String,

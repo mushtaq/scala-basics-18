@@ -1,5 +1,5 @@
 import data.Data
-import tc.app.Book
+import tc.domain.Book
 
 val square: Int => Int = x => x * x
 

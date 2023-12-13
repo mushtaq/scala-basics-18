@@ -1,7 +1,7 @@
 package data
 
 import play.api.libs.json.{JsNull, JsValue, Json}
-import tc.app.Book
+import tc.domain.Book
 
 case class Address(street: String, pin: Int)
 
