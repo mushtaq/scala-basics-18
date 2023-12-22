@@ -15,7 +15,8 @@ Sorter.sort(List(Some(9), None, Some(5)))
 Sorter.sort(List(Some("xyz"), None, Some("abc")))
 
 {
-  import A.intOrdAsc
+//  import A.intOrdAsc
+  import Ord.intOrd
   Sorter.sort(List((10, "a"), (10, "z"), (1, "z")))
 }
 
