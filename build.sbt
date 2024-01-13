@@ -8,6 +8,7 @@ lazy val root = (project in file("."))
     name := "scala-basics-18",
     
     libraryDependencies += "org.playframework" %% "play-json" % "3.0.1",
+    libraryDependencies += "org.apache.pekko" %% "pekko-stream-typed" % "1.0.2",
     libraryDependencies += "org.apache.pekko" %% "pekko-http" % "1.0.0",
     libraryDependencies += "org.scalatest"     %% "scalatest"    % "3.2.17"   % Test,
     libraryDependencies += "org.scalatestplus" %% "mockito-4-11" % "3.2.17.0" % Test,
